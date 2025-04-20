@@ -21,15 +21,18 @@ function Hero() {
             modern web technologies and frameworks.
           </p>
           <div className="flex flex-col sm:flex-row gap-8 justify-center">
-            <Link href='/resume/myresume.pdf'>
+            <a href='/resume/myresume.pdf' target="_blank" rel="noopener noreferrer">
             <Button className="bg-purple-600 hover:bg-purple-700 text-white">
               Download Resume
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            </Link>
+            </a>
+            <Link href={'https://mail.google.com/mail/?view=cm&to=dilyorbekubaydullayev@gmail.com'}>
             <Button  variant={'outline'}>
               Contact Me
             </Button>
+            </Link>
+            
           </div>
         </div>
       </section>
