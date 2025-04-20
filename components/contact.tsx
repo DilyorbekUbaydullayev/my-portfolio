@@ -10,9 +10,9 @@ function Contact() {
           <Badge className="mb-4 bg-blue-400/10 text-blue-400 hover:bg-blue-400/20 transition-colors">
             Get In Touch
           </Badge>
-          <h2 className=" text-3xl md:text-6xl font-bold pb-6 text-center tracking-tight bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">Let's Work Together</h2>
+          <h2 className=" text-3xl md:text-6xl font-bold pb-6 text-center tracking-tight bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">{"Let's Work Together"}</h2>
           <p className="text-white/70">
-            Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
+           {" Have a project in mind or want to discuss potential opportunities? I'd love to hear from you."}
           </p>
         </div>
 

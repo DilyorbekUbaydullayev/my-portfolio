@@ -11,7 +11,7 @@ function Hero() {
             Available for work
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
-            Hi, I'm Dilyorbek Ubaydullayev
+            {"Hi, I'm Dilyorbek Ubaydullayev"}
           </h1>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
             Front-End Developer
