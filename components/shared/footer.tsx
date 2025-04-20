@@ -1,31 +1,35 @@
-import Link from "next/link"
-import { Button } from "../ui/button"
-import { Github, Linkedin, Mail, Send } from "lucide-react"
+import { Github, Linkedin, Mail, Send, Twitter } from 'lucide-react'
+import Link from 'next/link'
+import { Button } from '../ui/button'
 
-
-function Navbar() {
+function Footer() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/50 border-b border-white/10">
-      <div className=" container flex items-center justify-between h-16  text-2xl">
-      <Link href="/" className="text-2xl font-bold tracking-tighter">
-            <span className="text-purple-400">Dilyorbek</span>.dev
-          </Link>
-          <nav className="hidden sm:flex items-center gap-6 text-sm">
-            <Link href="#about" className="hover:text-purple-400 transition-colors text-lg">
-              About
-            </Link>
-            <Link href="#skills" className="hover:text-purple-400 transition-colors text-lg">
-              Skills
-            </Link>
-            <Link href="#projects" className="hover:text-purple-400 transition-colors text-lg">
-              Projects
-            </Link>
-            <Link href="#contact" className="hover:text-purple-400 transition-colors text-lg">
-              Contact
-            </Link>
-          </nav>
-          <div className="flex space-x-3">
-            <Link href="https://github.com/DilyorbekUbaydullayev" target="_blank">
+    <footer className="py-5 border-t border-white/10">
+        <div className="container px-4 mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-center md:text-left">
+              <Link href="/" className="text-xl font-bold tracking-tighter">
+                <span className="text-purple-400">Dilyorbek</span>.dev
+              </Link>
+              <p className="text-sm text-white/50 mt-1">© {new Date().getFullYear()} All rights reserved.</p>
+            </div>
+            <nav className="flex items-center gap-6">
+              <Link href="#about" className="text-sm text-white/70 hover:text-white transition-colors">
+                About
+              </Link>
+              <Link href="#skills" className="text-sm text-white/70 hover:text-white transition-colors">
+                Skills
+              </Link>
+              <Link href="#projects" className="text-sm text-white/70 hover:text-white transition-colors">
+                Projects
+              </Link>
+              <Link href="#contact" className="text-sm text-white/70 hover:text-white transition-colors">
+                Contact
+              </Link>
+            </nav>
+            <div className="flex items-center gap-4">
+              {/* social media */}
+              <Link href="https://github.com/DilyorbekUbaydullayev" target="_blank">
               <Button
                 variant={'ghost'}
                 size="icon"
@@ -65,10 +69,11 @@ function Navbar() {
                 <span className="sr-only">LinkedIn</span>
               </Button>
             </Link>
+            </div>
           </div>
-      </div>
-    </header>
+        </div>
+      </footer>
   )
 }
 
-export default Navbar
+export default Footer
