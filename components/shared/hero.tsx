@@ -13,21 +13,21 @@ function Hero() {
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
             Hi, I'm Dilyorbek Ubaydullayev
           </h1>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
             Front-End Developer
           </h1>
           <p className="text-lg md:text-xl text-white/70 mb-8 leading-relaxed">
             I build exceptional digital experiences that are fast, accessible, and visually appealing. Specializing in
             modern web technologies and frameworks.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href='/myresume.pdf'>
+          <div className="flex flex-col sm:flex-row gap-8 justify-center">
+            <Link href='/resume/myresume.pdf'>
             <Button className="bg-purple-600 hover:bg-purple-700 text-white">
               Download Resume
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             </Link>
-            <Button  className="border border-purple-600 hover:bg-purple-600/20">
+            <Button  variant={'outline'}>
               Contact Me
             </Button>
           </div>
