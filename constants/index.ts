@@ -1,3 +1,5 @@
+
+import { Github, Linkedin, Mail, Send } from "lucide-react";
 import {
   SiNextdotjs,
   SiReact,
@@ -58,3 +60,41 @@ export const projects = [
     image: "/projects/taxpay.jpg",
   },
 ];
+
+export const navLinks = [
+  {
+    link:'/',
+    title:'Home'
+  },
+  {
+    link:'#about',
+    title:'About'
+  },
+  {
+    link:'#projects',
+    title:'Projects'
+  },
+  {
+    link:'#contact',
+    title:'Contact'
+  },
+]
+
+export const socialLinks = [
+  {
+    link:'https://github.com/DilyorbekUbaydullayev',
+    icon:Github
+  },
+  {
+    link:'https://www.linkedin.com/in/dilyorbekubaydullayev',
+    icon:Linkedin
+  },
+  {
+    link:'https://mail.google.com/mail/?view=cm&to=dilyorbekubaydullayev@gmail.com',
+    icon:Mail
+  },
+  {
+    link:'https://t.me/dilyorbek_dev',
+    icon:Send
+  },
+]

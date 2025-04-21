@@ -22,12 +22,12 @@ function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-8 justify-center">
             <a href='/resume/myresume.pdf' target="_blank" rel="noopener noreferrer">
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+            <Button >
               Download Resume
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             </a>
-            <Link href={'https://mail.google.com/mail/?view=cm&to=dilyorbekubaydullayev@gmail.com'}>
+            <Link href="#contact">
             <Button  variant={'outline'}>
               Contact Me
             </Button>

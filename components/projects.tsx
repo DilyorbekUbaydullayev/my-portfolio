@@ -5,6 +5,7 @@ import { Badge } from './ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
 import { projects } from '@/constants'
 import ProjectCard from './shared/projectCard'
+import Link from 'next/link'
 
 function Projects() {
   return (
@@ -36,10 +37,13 @@ function Projects() {
             </div>
           </TabsContent>
           <div className="flex justify-center mt-12">
-            <Button size="lg" variant="outline" className="border-purple-400 text-purple-400 hover:bg-purple-400/10">
+            <Link href={'/allprojects'}>
+            <Button size="lg" variant="outline" >
               View All Projects
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
+            </Link>
+            
           </div>
         </Tabs>
       </section>

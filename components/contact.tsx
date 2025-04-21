@@ -1,79 +1,85 @@
-import React from 'react'
+"use client"
+import React, { useRef } from 'react'
 import { Badge } from './ui/badge'
 import { Card, CardContent } from './ui/card'
 import { Button } from './ui/button'
-
+import { Input } from './ui/input'
+import { Textarea } from './ui/textarea'
+import emailjs from 'emailjs-com'
+import { ToastContainer, toast } from 'react-toastify';
 function Contact() {
+  const form = useRef<HTMLFormElement>(null);
+  const success = (e:string) => toast.success(e);
+  const errorAlert = (e:string) => toast.error(e);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  
+    if (!form.current) return;
+  
+    emailjs.sendForm(
+      'service_lb5p208',
+      'template_uctevia',
+      form.current,
+      'JuNhJ1E9rgIeHzuTn'
+    )
+    .then((result) => {
+      console.log(result.text);
+      success('Message sent successfully!');
+      form.current?.reset();
+    }, (error) => {
+      console.log(error.text);
+      errorAlert('Failed to send message, please try again.');
+    });
+  };
+
   return (
     <section id="contact" className="py-20 container px-4 mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <Badge className="mb-4 bg-blue-400/10 text-blue-400 hover:bg-blue-400/20 transition-colors">
-            Get In Touch
-          </Badge>
-          <h2 className=" text-3xl md:text-6xl font-bold pb-6 text-center tracking-tight bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">{"Let's Work Together"}</h2>
-          <p className="text-white/70">
-           {" Have a project in mind or want to discuss potential opportunities? I'd love to hear from you."}
-          </p>
-        </div>
+      <div className="max-w-3xl mx-auto text-center mb-16">
+        <Badge className="mb-4 bg-blue-400/10 text-blue-400 hover:bg-blue-400/20 transition-colors">
+          Get In Touch
+        </Badge>
+        <h2 className="text-3xl md:text-6xl font-bold pb-6 text-center tracking-tight bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
+          {"Let's Work Together"}
+        </h2>
+        <p className="text-white/70">
+          {"Have a project in mind or want to discuss potential opportunities? I'd love to hear from you."}
+        </p>
+      </div>
 
-        <div className="max-w-2xl mx-auto">
-          <Card className="bg-white/5 border-white/10">
-            <CardContent className="p-6">
-              <form className="grid gap-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
+      <div className="max-w-2xl mx-auto">
+        <Card className="bg-white/5 border-white/10">
+          <CardContent className="p-6">
+            <form ref={form} onSubmit={sendEmail} className="grid gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-sm font-medium">Name</label>
+                  <Input id="name" name="name" placeholder="Your name" required />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium">
-                    Subject
-                  </label>
-                  <input
-                    id="subject"
-                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
-                    placeholder="Project inquiry"
-                  />
+                  <label htmlFor="email" className="text-sm font-medium">Email</label>
+                  <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={5}
-                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
-                    placeholder="Tell me about your project..."
-                  />
-                </div>
-                <Button className="bg-purple-600 hover:bg-purple-700 text-white w-full">Send Message</Button>
-              </form>
-            </CardContent>
-          </Card>
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                <Input id="subject" name="title" placeholder="Project inquiry" required />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-medium">Message</label>
+                <Textarea id="message" name="message" placeholder="Tell me about your project..." required />
+              </div>
+              <Button type="submit">Send Message</Button>
+            </form>
+          </CardContent>
+        </Card>
 
-          <div className="mt-12 text-center text-white/70">
-            <p>You can also reach me through the social media links in the footer.</p>
-          </div>
+        <div className="mt-12 text-center text-white/70">
+          <p>You can also reach me through the social media links in the footer.</p>
         </div>
-      </section>
+      </div>
+      <ToastContainer theme="dark"/>
+    </section>
   )
 }
 
