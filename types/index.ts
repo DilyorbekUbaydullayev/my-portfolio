@@ -17,10 +17,12 @@ export interface IProjectCard{
 export interface ILink{
     link:string
     title:string
+    
 }
 export interface ISocial{
     link:string
     icon:LucideIcon
+    name:string
 }
 
 

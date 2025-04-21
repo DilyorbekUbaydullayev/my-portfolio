@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Dilyorbek Ubaydullayev",
-  description: " I'm Front end Developer and This is my portfolio website dilyorbek.uz, I think it is the best portfolio website for developers",
+  description: " I'm Dilyorbek Ubaydullayev and I'm Front end Developer and This is my portfolio website dilyorbek.uz, I think it is the best portfolio website for developers",
 };
 
 export default function RootLayout({
@@ -29,7 +29,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
       <meta name="google-site-verification" content="sc8vmfOv46FlwWYTyzq7HaN6PbNnTnhD9xc1HgBo3bU" />
-      <link rel="icon" type="image/png" href="/code.png" />
+      <link rel="shortcut icon" href="/code.png" />
+<link rel="icon" href="/code.png?v=1" type="image/png" sizes="32x32" />
+
 
       </head>
       <body
