@@ -9,20 +9,21 @@ import Link from 'next/link'
 
 function Projects() {
   return (
-    <section id="projects" className="py-20  px-8 mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+    <section id="projects" className="py-10 md:py-15  px-8 mx-auto">
+        <div className="max-w-3xl mx-auto text-center mb-8 md:mb-14">
           <Badge className="mb-4 bg-pink-400/10 text-pink-400 hover:bg-pink-400/20 transition-colors">
             Featured Work
           </Badge>
-          <h2 className="text-3xl md:text-6xl font-bold pb-6 text-center tracking-tight bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">Recent Projects</h2>
-          <p className="text-white/70">
+          <h2 className="text-3xl md:text-6xl font-bold pb-6 text-center tracking-tight bg-gradient-to-r  from-purple-700 to-purple-400 
+  dark:from-white dark:to-purple-400  bg-clip-text text-transparent">Recent Projects</h2>
+          <p className=" text-md md:text-xl text-gray-800 dark:text-white/70">
             Explore my latest work showcasing my skills and expertise in front-end development.
           </p>
         </div>
 
         <Tabs defaultValue="all" className="w-full mb-12">
           <div className="flex justify-center">
-            <TabsList className="bg-white/5 border border-white/10">
+            <TabsList className="bg-gray-500  border-gray-500 dark:bg-white/5 border dark:border-white/10">
               <TabsTrigger value="all">All</TabsTrigger>
               <TabsTrigger value="web">Web Apps</TabsTrigger>
               <TabsTrigger value="mobile">Mobile</TabsTrigger>
