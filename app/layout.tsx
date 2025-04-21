@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
       <meta name="google-site-verification" content="sc8vmfOv46FlwWYTyzq7HaN6PbNnTnhD9xc1HgBo3bU" />
-      <link rel="shortcut icon" href="/code.png" />
+      <link rel="shortcut icon" href="/icon.png" />
 <link rel="icon" href="/icon.png?v=1" type="image/png" sizes="32x32" />
 
 
