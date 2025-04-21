@@ -55,7 +55,7 @@ function Navbar() {
               </Tooltip>
             </TooltipProvider>
           ))}
-         
+          <ModeToggle />
         </div>
       </div>
     </header>

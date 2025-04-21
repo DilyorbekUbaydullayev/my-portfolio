@@ -11,10 +11,10 @@ function ModeToggle() {
     setMount(true)
    },[])
   return mount&& (
-   resolvedTheme==='dark'?(<Button size={'icon'} variant={'ghost'} onClick={()=>setTheme('light')}>
+   resolvedTheme==='dark'?(<Button className="hidden" size={'icon'} variant={'ghost'} onClick={()=>setTheme('light')}>
     <Sun/>
    </Button>):(
-    <Button size={'icon'} variant={'ghost'} onClick={()=>setTheme('dark')}>
+    <Button className="hidden" size={'icon'} variant={'ghost'} onClick={()=>setTheme('dark')}>
     <Moon/>
    </Button>
    )
