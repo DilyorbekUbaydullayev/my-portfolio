@@ -83,18 +83,22 @@ export const navLinks = [
 export const socialLinks = [
   {
     link:'https://github.com/DilyorbekUbaydullayev',
-    icon:Github
+    icon:Github,
+    name:'Github'
   },
   {
     link:'https://www.linkedin.com/in/dilyorbekubaydullayev',
-    icon:Linkedin
+    icon:Linkedin,
+    name:'Linkedin'
   },
   {
     link:'https://mail.google.com/mail/?view=cm&to=dilyorbekubaydullayev@gmail.com',
-    icon:Mail
+    icon:Mail,
+    name:'Mail'
   },
   {
     link:'https://t.me/dilyorbek_dev',
-    icon:Send
+    icon:Send,
+    name:'Telegram'
   },
 ]

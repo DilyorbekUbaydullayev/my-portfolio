@@ -10,7 +10,7 @@ function SkillCard(skill:ISkillCard) {
             <skill.icon  className={skill.style}/>
           </div>
         <h3 className="mt-4 font-medium text-lg ">{skill.title}</h3>
-        <p className="mt-2 text-sm text-white/70 max-lg:line-clamp-2">{skill.descr}</p>
+        <p className="mt-2 text-sm text-white/70 max-sm:hidden max-lg:line-clamp-2">{skill.descr}</p>
       </div>
     </div>
   )
