@@ -7,7 +7,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/
 
 function Footer() {
   return (
-    <footer className="py-5 border-t border-white/10">
+    <footer className="py-5 border-t border-gray-300 dark:border-white/10">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
@@ -23,7 +23,7 @@ function Footer() {
               <Link
                 href={item.link}
                 key={item.title}
-                className="hover:text-purple-400 transition-colors text-lg"
+                className="hover:text-purple-400 transition-colors text-md md:text-lg"
               >
                 {item.title}
               </Link>

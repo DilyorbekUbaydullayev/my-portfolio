@@ -10,10 +10,11 @@ import {
   TooltipTrigger,
 } from "../ui/tooltip";
 import { cn } from "@/lib/utils";
+import ModeToggle from "./mode-toggle";
 
 function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/50 border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/50 border-b border-gray-300 dark:border-white/10">
       <div className=" container flex items-center justify-between h-16  text-2xl">
         <Link href="/" className="text-2xl font-bold tracking-tighter">
           <span className="text-purple-400">Dilyorbek</span>.dev
@@ -44,7 +45,7 @@ function Navbar() {
                       aria-label={social.name}
                       variant={"ghost"}
                       size="icon"
-                      className="rounded-full text-white hover:text-purple-400 hover:bg-white/10"
+                      className="rounded-full  hover:text-purple-400 hover:bg-white/10"
                     >
                       <social.icon className="h-5 w-5" />
                     </Button>
@@ -54,6 +55,7 @@ function Navbar() {
               </Tooltip>
             </TooltipProvider>
           ))}
+          <ModeToggle />
         </div>
       </div>
     </header>

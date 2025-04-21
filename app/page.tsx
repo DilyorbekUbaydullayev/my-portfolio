@@ -9,7 +9,7 @@ function HomePage() {
   return (
     <div className=" min-h-screen bg-background text-white ">
       <Hero/>
-      <Separator/>
+      <Separator />
       <About/>
       <Separator/>
       <Skills/>
