@@ -1,5 +1,5 @@
 import { IconType } from "react-icons"
-
+import { LucideIcon } from "lucide-react";
 export interface ISkillCard{
     icon:IconType
     title:string
@@ -13,3 +13,14 @@ export interface IProjectCard{
     tags:string[]
     image:string
 }
+
+export interface ILink{
+    link:string
+    title:string
+}
+export interface ISocial{
+    link:string
+    icon:LucideIcon
+}
+
+
