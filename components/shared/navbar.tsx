@@ -41,7 +41,7 @@ function Navbar() {
                     className={cn((social.name==='Mail'||social.name==='Telegram')&&'max-sm:hidden')}
                   >
                     <Button
-                      name={social.name}
+                      aria-label={social.name}
                       variant={"ghost"}
                       size="icon"
                       className="rounded-full text-white hover:text-purple-400 hover:bg-white/10"
