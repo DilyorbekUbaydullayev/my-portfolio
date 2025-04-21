@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dilyorbek.uz
+
+# Sitemaps
+Sitemap: https://dilyorbek.uz/sitemap.xml
