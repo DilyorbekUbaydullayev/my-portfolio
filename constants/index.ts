@@ -46,7 +46,7 @@ export const projects = [
     tags: ["React", "TypeScript", "Firebase","ShadcnUI"],
     image: Gym,
     githubLink:'https://github.com/DilyorbekUbaydullayev/gym',
-    siteLink:'https://gymtraining-delta.vercel.app/'
+    siteLink:'https://gym-jade-two.vercel.app/'
   },
   {
     title: "Travel Booking Platform",
