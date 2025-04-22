@@ -18,8 +18,35 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   title: "Dilyorbek Ubaydullayev",
-  description: " I'm Dilyorbek Ubaydullayev and I'm Front end Developer and This is my portfolio website dilyorbek.uz, I think it is the best portfolio website for developers",
+  description:
+    "I'm Dilyorbek Ubaydullayev, a Front-End Developer. This is my portfolio website: dilyorbek.uz",
+  openGraph: {
+    title: "Dilyorbek Ubaydullayev",
+    description:
+      "Front-End Developer portfolio website — projects, skills, and contact information.",
+    url: "https://dilyorbek.uz",
+    siteName: "Dilyorbek Portfolio",
+    images: [
+      {
+        url: "/banner.png", 
+        width: 1200,
+        height: 630,
+        alt: "Dilyorbek Ubaydullayev Portfolio Banner",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dilyorbek Ubaydullayev",
+    description:
+      "This is my portfolio website. I'm a Front-End Developer based in Uzbekistan.",
+    images: ["/banner.png"],
+    
+  },
 };
+
 
 export default function RootLayout({
   children,
@@ -29,22 +56,42 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-      <meta name="google-site-verification" content="sc8vmfOv46FlwWYTyzq7HaN6PbNnTnhD9xc1HgBo3bU" />
-      <meta content="Dilyorbek Ubaydullayev" property="og:title" />
-      <meta content="https://dilyorbek.uz/" property="og:url" />
-      <meta content="website" property="og:type" />
-      <link rel="shortcut icon" href="/icon.png" />
-<link rel="icon" href="/icon.png?v=1" type="image/png" sizes="32x32" />
+        <meta
+          name="google-site-verification"
+          content="sc8vmfOv46FlwWYTyzq7HaN6PbNnTnhD9xc1HgBo3bU"
+        />
 
+<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+        <link rel="canonical" href="https://dilyorbek.uz/" />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Dilyorbek Ubaydullayev",
+      url: "https://dilyorbek.uz",
+      sameAs: [
+        "https://github.com/DilyorbekUbaydullayev",
+        "https://www.linkedin.com/in/dilyorbekubaydullayev",
+      ],
+      jobTitle: "Front-End Developer",
+      worksFor: {
+        "@type": "Organization",
+        name: "Freelancer",
+      },
+    }),
+  }}
+/>
 
       </head>
       <body
         className={`${creteRound.variable} ${workSans.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Navbar/>
+          <Navbar />
           {children}
-          <Footer/>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
