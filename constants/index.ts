@@ -1,4 +1,5 @@
 
+import { ComingSoon,Gym} from "@/assets";
 import { Github, Linkedin, Mail, Send } from "lucide-react";
 import {
   SiNextdotjs,
@@ -39,25 +40,27 @@ export const skills = [
 
 export const projects = [
   {
-    title: "E-Commerce Dashboard",
+    title: "Gym Training",
     descr:
-      "A comprehensive admin dashboard for managing online stores with real-time analytics.",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    image: "/projects/e-commerce.jpg",
+      "A full-stack gym dashboard built for practice, featuring Firebase auth, backend integration, and real-time class and member management.",
+    tags: ["React", "TypeScript", "Firebase","ShadcnUI"],
+    image: Gym,
+    githubLink:'https://github.com/DilyorbekUbaydullayev/gym',
+    siteLink:'https://gymtraining-delta.vercel.app/'
   },
   {
     title: "Travel Booking Platform",
     descr:
       "A modern travel booking application with interactive maps and personalized recommendations.",
     tags: ["Next.js", "Supabase", "Framer Motion"],
-    image: "/projects/travel.webp",
+    image: ComingSoon,
   },
   {
     title: "Finance Management App",
     descr:
       "Personal finance tracker with budgeting tools and expense visualization.",
     tags: ["React", "Chart.js", "Firebase"],
-    image: "/projects/taxpay.jpg",
+    image: ComingSoon,
   },
 ];
 

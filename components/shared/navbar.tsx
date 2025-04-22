@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/50 border-b border-gray-300 dark:border-white/10">
       <div className=" container flex items-center justify-between h-16  text-2xl">
-        <Link href="/" className="text-2xl font-bold tracking-tighter">
+        <Link href="/" className="text-2xl font-bold  tracking-tighter">
           <span className="text-purple-400">Dilyorbek</span>.dev
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -24,7 +24,7 @@ function Navbar() {
             <Link
               href={item.link}
               key={item.title}
-              className={cn("hover:text-purple-400 transition-colors text-lg",)}
+              className={cn("hover:text-purple-400 transition-colors font-crete text-lg",)}
             >
               {item.title}
             </Link>

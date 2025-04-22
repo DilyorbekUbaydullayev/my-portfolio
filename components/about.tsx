@@ -8,7 +8,7 @@ function About() {
     <Badge className="mb-4 bg-purple-400/10 text-purple-400 hover:bg-purple-400/20 transition-colors">
             About me
           </Badge>
-      <h2 className="text-3xl md:text-6xl font-bold mb-6 text-center tracking-tight bg-gradient-to-r  from-purple-700 to-purple-400 
+      <h2 className="text-3xl md:text-6xl font-bold mb-6 text-center tracking-tight bg-gradient-to-r  from-purple-700 to-purple-400 font-crete 
   dark:from-white dark:to-purple-400  bg-clip-text text-transparent">About Me</h2>
       <div className="max-w-4xl mx-auto">
         <p className="text-md md:text-xl text-gray-800 dark:text-white/70 mb-8 leading-relaxed">

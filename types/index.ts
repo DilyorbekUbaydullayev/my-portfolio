@@ -1,5 +1,6 @@
 import { IconType } from "react-icons"
 import { LucideIcon } from "lucide-react";
+import { StaticImageData } from "next/image";
 export interface ISkillCard{
     icon:IconType
     title:string
@@ -11,7 +12,9 @@ export interface IProjectCard{
     title:string
     descr:string
     tags:string[]
-    image:string
+    image:StaticImageData
+    githubLink?:string
+    siteLink?:string
 }
 
 export interface ILink{
