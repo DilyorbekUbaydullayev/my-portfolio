@@ -4,7 +4,7 @@ import { ISkillCard } from "@/types"
 function SkillCard(skill:ISkillCard) {
   
   return (
-    <div className="bg-gray-800 dark:bg-white/5 border border-gray-700 dark:border-white/10  rounded-xl p-6 hover:bg-gray-700 dark:hover:bg-white/10 transition-colors">
+    <div className="bg-gray-800 dark:bg-white/5 border border-gray-700 dark:border-white/10  rounded-xl py-6 px-3 hover:bg-gray-700 dark:hover:bg-white/10 transition-colors">
       <div className="flex flex-col items-center text-center">
       <div >
             <skill.icon  className={skill.style}/>
