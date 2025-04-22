@@ -39,7 +39,7 @@ function Contact() {
         <Badge className="mb-4 bg-blue-400/10 text-blue-400 hover:bg-blue-400/20 transition-colors">
           Get In Touch
         </Badge>
-        <h2 className="text-3xl md:text-6xl font-bold pb-6 text-center tracking-tight bg-gradient-to-r  from-purple-700 to-purple-400 
+        <h2 className="text-3xl md:text-6xl font-bold pb-6 text-center tracking-tight bg-gradient-to-r  from-purple-700 to-purple-400 font-crete 
   dark:from-white dark:to-purple-400  bg-clip-text text-transparent">
           {"Let's Work Together"}
         </h2>

@@ -10,17 +10,17 @@ function Hero() {
           <Badge className="mb-4 bg-purple-400/10 text-purple-400 hover:bg-purple-400/20 transition-colors">
             Available for work
           </Badge>
-          <h1 className="text-3xl md:text-6xl font-bold tracking-tight pb-6 
-  bg-gradient-to-r from-purple-700 to-purple-400 
+          <h1 className="text-3xl font-crete md:text-6xl font-bold tracking-tight pb-6 
+  bg-gradient-to-r from-purple-700 to-purple-400 font-crete 
   dark:from-white dark:to-purple-400 
   bg-clip-text text-transparent">
   {"Hi, I'm Dilyorbek Ubaydullayev"}
 </h1>
 
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-purple-700 to-purple-400  dark:from-white dark:to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-crete md:text-5xl font-bold tracking-tight pb-6 bg-gradient-to-r from-purple-700 to-purple-400 font-crete  dark:from-white dark:to-purple-400 bg-clip-text text-transparent">
             Front-End Developer
           </h1>
-          <p className="text-md md:text-xl text-gray-800 dark:text-white/70 mb-8 leading-relaxed">
+          <p className="text-md  md:text-xl text-gray-800 dark:text-white/70 mb-8 leading-relaxed">
             I build exceptional digital experiences that are fast, accessible, and visually appealing. Specializing in
             modern web technologies and frameworks.
           </p>

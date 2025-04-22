@@ -14,7 +14,7 @@ function Projects() {
           <Badge className="mb-4 bg-pink-400/10 text-pink-400 hover:bg-pink-400/20 transition-colors">
             Featured Work
           </Badge>
-          <h2 className="text-3xl md:text-6xl font-bold pb-6 text-center tracking-tight bg-gradient-to-r  from-purple-700 to-purple-400 
+          <h2 className="text-3xl md:text-6xl font-bold pb-6 text-center tracking-tight bg-gradient-to-r  from-purple-700 to-purple-400 font-crete 
   dark:from-white dark:to-purple-400  bg-clip-text text-transparent">Recent Projects</h2>
           <p className=" text-md md:text-xl text-gray-800 dark:text-white/70">
             Explore my latest work showcasing my skills and expertise in front-end development.
@@ -35,6 +35,21 @@ function Projects() {
              {projects.map(project=>(
               <ProjectCard key={project.title} {...project} />
              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="web" className="mt-8">
+            <div className="">
+             <h1 className='text-white/70 md:text-2xl text-center'>Coming soon...</h1>
+            </div>
+          </TabsContent>
+          <TabsContent value="mobile" className="mt-8">
+            <div className="">
+             <h1 className='text-white/70 md:text-2xl text-center'>Coming soon...</h1>
+            </div>
+          </TabsContent>
+          <TabsContent value="design" className="mt-8">
+            <div className="">
+             <h1 className='text-white/70 md:text-2xl text-center'>Coming soon...</h1>
             </div>
           </TabsContent>
           <div className="flex justify-center mt-12">

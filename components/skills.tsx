@@ -10,7 +10,7 @@ function Skills() {
           <Badge className="mb-4 bg-teal-400/10 text-teal-400 hover:bg-teal-400/20 transition-colors">
             Skills & Expertise
           </Badge>
-          <h2 className="text-3xl md:text-6xl font-bold pb-3 text-center tracking-tight bg-gradient-to-r  from-purple-700 to-purple-400 
+          <h2 className="text-3xl md:text-6xl font-bold pb-3 text-center tracking-tight bg-gradient-to-r  from-purple-700 to-purple-400 font-crete 
   dark:from-white dark:to-purple-400  bg-clip-text text-transparent">My Technical Proficiency</h2>
           
         </div>
