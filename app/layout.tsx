@@ -29,6 +29,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
       <meta name="google-site-verification" content="sc8vmfOv46FlwWYTyzq7HaN6PbNnTnhD9xc1HgBo3bU" />
+      <meta content="Dilyorbek Ubaydullayev" property="og:title" />
+      <meta content="https://dilyorbek.uz/" property="og:url" />
+      <meta content="website" property="og:type" />
       <link rel="shortcut icon" href="/icon.png" />
 <link rel="icon" href="/icon.png?v=1" type="image/png" sizes="32x32" />
 
