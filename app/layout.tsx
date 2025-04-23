@@ -20,6 +20,14 @@ export const metadata: Metadata = {
   title: "Dilyorbek Ubaydullayev",
   description:
     "I'm Dilyorbek Ubaydullayev, a Front-End Developer. This is my portfolio website: dilyorbek.uz",
+  metadataBase: new URL("https://dilyorbek.uz"),
+  alternates: {
+    canonical: "/",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Dilyorbek Ubaydullayev",
     description:
@@ -28,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Dilyorbek Portfolio",
     images: [
       {
-        url: "/banner.png", 
+        url: "/banner.png",
         width: 1200,
         height: 630,
         alt: "Dilyorbek Ubaydullayev Portfolio Banner",
@@ -43,48 +51,19 @@ export const metadata: Metadata = {
     description:
       "This is my portfolio website. I'm a Front-End Developer based in Uzbekistan.",
     images: ["/banner.png"],
-    
+  },
+  verification: {
+    google: "sc8vmfOv46FlwWYTyzq7HaN6PbNnTnhD9xc1HgBo3bU",
   },
 };
 
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta
-          name="google-site-verification"
-          content="sc8vmfOv46FlwWYTyzq7HaN6PbNnTnhD9xc1HgBo3bU"
-        />
-
-<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-        <link rel="canonical" href="https://dilyorbek.uz/" />
-        <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Dilyorbek Ubaydullayev",
-      url: "https://dilyorbek.uz",
-      sameAs: [
-        "https://github.com/DilyorbekUbaydullayev",
-        "https://www.linkedin.com/in/dilyorbekubaydullayev",
-      ],
-      jobTitle: "Front-End Developer",
-      worksFor: {
-        "@type": "Organization",
-        name: "Freelancer",
-      },
-    }),
-  }}
-/>
-
-      </head>
       <body
         className={`${creteRound.variable} ${workSans.variable} antialiased`}
       >
@@ -93,6 +72,27 @@ export default function RootLayout({
           {children}
           <Footer />
         </ThemeProvider>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Dilyorbek Ubaydullayev",
+              url: "https://dilyorbek.uz",
+              sameAs: [
+                "https://github.com/DilyorbekUbaydullayev",
+                "https://www.linkedin.com/in/dilyorbekubaydullayev",
+              ],
+              jobTitle: "Front-End Developer",
+              worksFor: {
+                "@type": "Organization",
+                name: "Freelancer",
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );
