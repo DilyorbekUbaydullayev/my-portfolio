@@ -58,7 +58,7 @@ export const projects = [
   {
     title: "Finance Management App",
     descr:
-      "Personal finance tracker with budgeting tools and expense visualization.",
+      "A comprehensive personal finance tracker that helps users effectively manage their income and expenses.",
     tags: ["React", "Chart.js", "Firebase"],
     image: ComingSoon,
   },
@@ -66,7 +66,7 @@ export const projects = [
 
 export const navLinks = [
   {
-    link:'/',
+    link:'#home',
     title:'Home'
   },
   {

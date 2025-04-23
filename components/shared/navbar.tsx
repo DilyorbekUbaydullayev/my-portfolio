@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { navLinks, socialLinks } from "@/constants";
@@ -10,9 +10,10 @@ import {
   TooltipTrigger,
 } from "../ui/tooltip";
 import { cn } from "@/lib/utils";
-import ModeToggle from "./mode-toggle";
-
+import { usePathname } from "next/navigation";
 function Navbar() {
+  const pathname = usePathname();
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/50 border-b border-gray-300 dark:border-white/10">
       <div className=" container flex items-center justify-between h-16  text-2xl">
@@ -22,9 +23,11 @@ function Navbar() {
         <nav className="hidden md:flex items-center gap-6 text-sm">
           {navLinks.map((item: ILink) => (
             <Link
-              href={item.link}
+              href={pathname === "/allprojects" ? `/${item.link}` : item.link}
               key={item.title}
-              className={cn("hover:text-purple-400 transition-colors font-crete text-lg",)}
+              className={cn(
+                "hover:text-purple-400 transition-colors font-crete text-lg"
+              )}
             >
               {item.title}
             </Link>
@@ -39,7 +42,10 @@ function Navbar() {
                     href={social.link}
                     aria-label={social.name}
                     target="_blank"
-                    className={cn((social.name==='Mail'||social.name==='Telegram')&&'max-sm:hidden')}
+                    className={cn(
+                      (social.name === "Mail" || social.name === "Telegram") &&
+                        "max-sm:hidden"
+                    )}
                   >
                     <Button
                       aria-label={social.name}
@@ -55,7 +61,6 @@ function Navbar() {
               </Tooltip>
             </TooltipProvider>
           ))}
-          <ModeToggle />
         </div>
       </div>
     </header>

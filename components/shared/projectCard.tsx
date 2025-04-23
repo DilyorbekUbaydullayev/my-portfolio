@@ -4,6 +4,7 @@ import { IProjectCard } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { ReadMoreText } from "./readmore";
 
 function ProjectCard(project: IProjectCard) {
   return (
@@ -19,9 +20,7 @@ function ProjectCard(project: IProjectCard) {
       </div>
       <div className="p-4">
         <h3 className="text-xl font-medium mb-2">{project.title}</h3>
-        <p className="text-gray-300 dark:text-white/70 text-sm mb-4 line-clamp-2">
-          {project.descr}
-        </p>
+        <ReadMoreText text={project.descr} />
         <div className="flex flex-wrap gap-2 mb-10">
           {project.tags.map((tag) => (
             <Badge key={tag}>{tag}</Badge>

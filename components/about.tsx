@@ -5,7 +5,7 @@ function About() {
   return (
     <section id="about" className="bg-background py-10 md:py-15">
     <div className="container mx-auto px-4 text-center">
-    <Badge className="mb-4 bg-purple-400/10 text-purple-400 hover:bg-purple-400/20 transition-colors">
+    <Badge className="mb-4 bg-blue-400/10 text-blue-400 hover:bg-blue-400/20 transition-colors">
             About me
           </Badge>
       <h2 className="text-3xl md:text-6xl font-bold mb-6 text-center tracking-tight bg-gradient-to-r  from-purple-700 to-purple-400 font-crete 
