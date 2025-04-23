@@ -1,11 +1,14 @@
-
+"use client"
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { navLinks, socialLinks } from "@/constants";
 import { ILink, ISocial } from "@/types";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 function Footer() {
+  const pathname = usePathname();
   return (
     <footer className="py-5 border-t border-gray-300 dark:border-white/10">
       <div className="container px-4 mx-auto">
@@ -19,14 +22,16 @@ function Footer() {
             </p>
           </div>
           <nav className="flex items-center gap-6">
-            {navLinks.map((item: ILink) => (
-              <Link
-                href={item.link}
-                key={item.title}
-                className="hover:text-purple-400 transition-colors text-md md:text-lg"
-              >
-                {item.title}
-              </Link>
+          {navLinks.map((item: ILink) => (
+            <Link
+              href={pathname === "/allprojects" ? `/${item.link}` : item.link}
+              key={item.title}
+              className={cn(
+                "hover:text-purple-400 transition-colors font-crete text-lg"
+              )}
+            >
+              {item.title}
+            </Link>
             ))}
           </nav>
           <div className="flex items-center gap-4">
