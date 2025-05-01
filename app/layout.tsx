@@ -24,7 +24,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-
+  authors:[{name:'Dilyorbek Ubaydullayev', url:'https://dilyorbek.uz'}],
+  keywords:"Dilyorbek Ubaydullayev, portfolio website for developers, best portfolio websites,front-end portfolio website, front end ,backed, frontend,",
   icons: {
     icon: "/favicon.ico",
   },

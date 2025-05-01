@@ -1,5 +1,5 @@
 
-import { ComingSoon,Gym} from "@/assets";
+import { Codely, ComingSoon,Gym} from "@/assets";
 import { Github, Linkedin, Mail, Send } from "lucide-react";
 import {
   SiNextdotjs,
@@ -49,11 +49,13 @@ export const projects = [
     siteLink:'https://gym-jade-two.vercel.app/'
   },
   {
-    title: "Travel Booking Platform",
+    title: "Codely Programming Articles",
     descr:
-      "A modern travel booking application with interactive maps and personalized recommendations.",
-    tags: ["Next.js", "Supabase", "Framer Motion"],
-    image: ComingSoon,
+      "Programming news, tips, and tutorials on React Suspense, scalable APIs, full-stack development, and in-browser AI chatbots. Find guides and best practices to level up your code!",
+    tags: ["Next.js","Typecript", "Hygraph", "Shadcn"],
+    image: Codely,
+    githubLink:'https://github.com/DilyorbekUbaydullayev/cms-blog',
+    siteLink:'https://codely-woad.vercel.app/'
   },
   {
     title: "Finance Management App",
