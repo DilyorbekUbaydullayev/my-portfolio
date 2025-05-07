@@ -5,8 +5,17 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { projects } from "@/constants"
 import { ArrowLeft} from "lucide-react"
+import { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata={
+
+  title:'All Projects',
+  description:'"A collection of diverse projects developed by me. Includes web apps, blog platforms, e-commerce sites, and interactive games."'
+
+}
 function AllProjects() {
+ 
   return (
     <div className='min-h-screen mt-20'>
       <Breadcrumb className="ps-4">
