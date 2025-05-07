@@ -25,7 +25,7 @@ function Hero() {
             modern web technologies and frameworks.
           </p>
           <div className="flex flex-col sm:flex-row gap-8 justify-center">
-            <a href='/resume/Dilyorbek_Ubaydullayev_Resume.pdf' target="_blank" rel="noopener noreferrer">
+            <a href='/resume/Dilyorbek Ubaydullayev - Resume.pdf' target="_blank" rel="noopener noreferrer">
             <Button >
               Download Resume
               <ArrowRight className="ml-2 h-4 w-4" />
