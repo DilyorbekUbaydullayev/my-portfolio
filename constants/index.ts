@@ -58,10 +58,10 @@ export const projects = [
     siteLink:'https://codely-woad.vercel.app/'
   },
   {
-    title: "Finance Management App",
+    title: "LearnUp: Online Courses",
     descr:
-      "A comprehensive personal finance tracker that helps users effectively manage their income and expenses.",
-    tags: ["React", "Chart.js", "Firebase"],
+      "Revolutionize e-learning with our Udemy clone. Seamlessly authenticate users, process payments, support multilingual content, and integrate AI for enhanced learning experiences.",
+    tags: ["Next","Typescript","Shadcn","Mongodb","Nodejs-express","Stripe","Server-actions"],
     image: ComingSoon,
   },
 ];
