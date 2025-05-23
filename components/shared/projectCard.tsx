@@ -8,7 +8,7 @@ import { ReadMoreText } from "./readmore";
 
 function ProjectCard(project: IProjectCard) {
   return (
-    <div className="group relative max-w-md overflow-hidden rounded-xl bg-gray-700 dark:bg-white/5 border border-gray-400 dark:border-white/10  hover:bg-gray-600 dark:hover:bg-white/10 transition-all duration-300">
+    <div className=" self-start group relative max-w-md overflow-hidden rounded-xl bg-gray-700 dark:bg-white/5 border border-gray-400 dark:border-white/10  hover:bg-gray-600 dark:hover:bg-white/10 transition-all duration-300">
       <div className="aspect-video overflow-hidden">
         <Image
           width={300}
@@ -38,7 +38,7 @@ function ProjectCard(project: IProjectCard) {
           <Link
             href={project.siteLink ? project.siteLink : "#"}
             target="_blank"
-            className={cn("text-gray-200 dark:text-white/70 hover:text-purple-300 dark:hover:text-white transition-colors flex",!project.githubLink&&'hidden')}
+            className={cn("text-gray-200 dark:text-white/70 hover:text-purple-300 dark:hover:text-white transition-colors flex",!project.siteLink&&'hidden')}
           >
             <ExternalLink className="h-5 w-5" />
             <span className="">Live Demo</span>
