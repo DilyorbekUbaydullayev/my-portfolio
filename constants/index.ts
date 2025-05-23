@@ -1,5 +1,5 @@
 
-import { Codely, ComingSoon,Gym} from "@/assets";
+import { Codely, ComingSoon,Gym, Quizbot} from "@/assets";
 import { Github, Linkedin, Mail, Send } from "lucide-react";
 import {
   SiNextdotjs,
@@ -56,6 +56,13 @@ export const projects = [
     image: Codely,
     githubLink:'https://github.com/DilyorbekUbaydullayev/cms-blog',
     siteLink:'https://codely-woad.vercel.app/'
+  },{
+    title: "Telegram QuizBot",
+    descr:
+      "A Telegram bot that creates interactive quizzes from .docx files. Solved the problem found in many bots that require manual entry for each question — this one automates the whole process. Deployed on Railway and actively running.",
+    tags: ["Python","Telebot","Firebase","Railway"],
+    image: Quizbot, 
+    siteLink:'https://t.me/quiz_savollar_bot/'
   },
   {
     title: "LearnUp: Online Courses",
@@ -64,6 +71,7 @@ export const projects = [
     tags: ["Next","Typescript","Shadcn","Mongodb","Nodejs-express","Stripe","Server-actions"],
     image: ComingSoon,
   },
+  
 ];
 
 export const navLinks = [
