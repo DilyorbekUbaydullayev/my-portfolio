@@ -14,29 +14,53 @@ function Contact() {
   const form = useRef<HTMLFormElement>(null);
   const [sending, setSending] = useState(false);
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendToTelegram = async (name: string, email: string, subject: string, message: string) => {
+    const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
+    if (!botToken || !chatId) return;
+
+    const text = `📩 *New Contact Form Message*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n📌 *Subject:* ${subject}\n💬 *Message:*\n${message}`;
+
+    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text,
+        parse_mode: "Markdown",
+      }),
+    });
+  };
+
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.current) return;
 
     setSending(true);
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
-      )
-      .then(
-        () => {
-          toast.success("Message sent successfully!");
-          form.current?.reset();
-        },
-        () => {
-          toast.error("Failed to send message, please try again.");
-        }
-      )
-      .finally(() => setSending(false));
+    const formData = new FormData(form.current);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const subject = formData.get("title") as string;
+    const message = formData.get("message") as string;
+
+    try {
+      await Promise.all([
+        emailjs.sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+          form.current,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+        ),
+        sendToTelegram(name, email, subject, message),
+      ]);
+      toast.success("Message sent successfully!");
+      form.current?.reset();
+    } catch {
+      toast.error("Failed to send message, please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -134,12 +158,6 @@ function Contact() {
             </CardContent>
           </Card>
 
-          <div className="mt-12 text-center text-gray-800 dark:text-white/70">
-            <p>
-              You can also reach me through the social media links in the
-              footer.
-            </p>
-          </div>
         </div>
       </MotionWrapper>
       <ToastContainer theme="dark" />
