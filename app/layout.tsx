@@ -19,7 +19,7 @@ const workSans = Work_Sans({
 export const metadata: Metadata = {
   title: "Dilyorbek Ubaydullayev",
   description:
-    "I'm Dilyorbek Ubaydullayev, a Front-End Developer. This is my portfolio website: dilyorbek.uz",
+    "I'm Dilyorbek Ubaydullayev, a Software Engineer. This is my portfolio website: dilyorbek.uz",
   metadataBase: new URL("https://dilyorbek.uz"),
   alternates: {
     canonical: "/",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dilyorbek Ubaydullayev",
     description:
-      "Front-End Developer portfolio website — projects, skills, and contact information.",
+      "Software Engineer portfolio website — projects, skills, and contact information.",
     url: "https://dilyorbek.uz",
     siteName: "Dilyorbek Portfolio",
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dilyorbek Ubaydullayev",
     description:
-      "This is my portfolio website. I'm a Front-End Developer based in Uzbekistan.",
+      "This is my portfolio website. I'm a Software Engineer based in Uzbekistan.",
     images: ["/banner.png"],
   },
   verification: {
@@ -69,8 +69,16 @@ export default function RootLayout({
         className={`${creteRound.variable} ${workSans.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-purple-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:text-sm"
+          >
+            Skip to content
+          </a>
           <Navbar />
-          {children}
+          <main id="main">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
 
@@ -86,7 +94,7 @@ export default function RootLayout({
                 "https://github.com/DilyorbekUbaydullayev",
                 "https://www.linkedin.com/in/dilyorbekubaydullayev",
               ],
-              jobTitle: "Front-End Developer",
+              jobTitle: "Software Engineer",
               worksFor: {
                 "@type": "Organization",
                 name: "Freelancer",
