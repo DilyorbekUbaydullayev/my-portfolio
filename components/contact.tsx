@@ -5,7 +5,6 @@ import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
-import emailjs from "emailjs-com";
 import { ToastContainer, toast } from "react-toastify";
 import { Loader2, Send } from "lucide-react";
 import MotionWrapper from "./shared/motion-wrapper";
@@ -13,24 +12,6 @@ import MotionWrapper from "./shared/motion-wrapper";
 function Contact() {
   const form = useRef<HTMLFormElement>(null);
   const [sending, setSending] = useState(false);
-
-  const sendToTelegram = async (name: string, email: string, subject: string, message: string) => {
-    const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
-    const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
-    if (!botToken || !chatId) return;
-
-    const text = `📩 *New Contact Form Message*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n📌 *Subject:* ${subject}\n💬 *Message:*\n${message}`;
-
-    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text,
-        parse_mode: "Markdown",
-      }),
-    });
-  };
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,18 +25,34 @@ function Contact() {
     const subject = formData.get("title") as string;
     const message = formData.get("message") as string;
 
+    const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
+
+    if (!botToken || !chatId) {
+      toast.error("Configuration error. Please try again later.");
+      setSending(false);
+      return;
+    }
+
+    const text = `📩 *New Contact Form Message*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n📌 *Subject:* ${subject}\n💬 *Message:*\n${message}`;
+
     try {
-      await Promise.all([
-        emailjs.sendForm(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-          form.current,
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
-        ),
-        sendToTelegram(name, email, subject, message),
-      ]);
-      toast.success("Message sent successfully!");
-      form.current?.reset();
+      const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text,
+          parse_mode: "Markdown",
+        }),
+      });
+
+      if (res.ok) {
+        toast.success("Message sent successfully!");
+        form.current?.reset();
+      } else {
+        toast.error("Failed to send message, please try again.");
+      }
     } catch {
       toast.error("Failed to send message, please try again.");
     } finally {
